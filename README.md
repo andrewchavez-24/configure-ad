@@ -104,3 +104,116 @@ The output for the DNS settings should show DC-1’s private IP Address
 <br />
 
 ![Screen Shot 2025-03-10 at 12 02 48 PM](https://github.com/user-attachments/assets/a4e1bb03-a9f7-4292-a6b3-45254af73bef)
+
+<p>
+Login to DC-1 and install Active Directory Domain Services
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 12 46 46 PM](https://github.com/user-attachments/assets/d5b44259-134b-4d58-93b3-87ae373273c3)
+
+<p>
+Promote as a DC: Setup a new forest as mydomain.com
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 12 50 25 PM](https://github.com/user-attachments/assets/0dc5c178-0481-40fe-91e0-965489a5930c)
+
+<p>
+Restart and then log back into DC-1 as user: mydomain.com\labuser
+</p>
+<br />
+
+<p>
+In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES”
+</p>
+<p>
+Create a new OU named “_ADMINS”
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 1 41 27 PM](https://github.com/user-attachments/assets/3a98eed6-7c1a-4bed-b125-0abc3742680d)
+
+<p>
+Create a new employee named “Jane Doe” (same password) with the username of “jane_admin” / Cyberlab123!
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 1 43 47 PM](https://github.com/user-attachments/assets/4c24448a-248f-4c0c-9a9b-6891eff91886)
+
+<p>
+Add jane_admin to the “Domain Admins” Security Group
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 1 55 01 PM](https://github.com/user-attachments/assets/ae0cf498-f19c-49b3-9f3d-5bc251a3fa50)
+
+<p>
+Log out / close the connection to DC-1 and log back in as “mydomain.com\jane_admin”
+</p>
+<br />
+
+<p>
+Use jane_admin as your admin account from now on
+</p>
+<br />
+
+<p>
+Login to Client-1 as the original local admin (labuser) and join it to the domain (computer will restart)
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 2 00 19 PM](https://github.com/user-attachments/assets/e321d0d7-80cd-4737-afce-e1579cf667d9)
+
+<p>
+Login to the Domain Controller and verify Client-1 shows up in ADUC
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 2 03 22 PM](https://github.com/user-attachments/assets/f0f13af8-e865-4810-aa2b-897944a0bc17)
+
+<p>
+Create a new OU named “_CLIENTS” and drag Client-1 into there
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 2 05 18 PM](https://github.com/user-attachments/assets/bfbbb8fc-eb15-49a3-a3a1-37732f7518fd)
+
+<p>
+Log into Client-1 as mydomain.com\jane_admin,
+Open system properties,
+Click “Remote Desktop”,
+Allow “domain users” access to remote desktop
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 2 21 18 PM](https://github.com/user-attachments/assets/2128ea0c-9c0e-4461-a661-aeb128e5fe3a)
+
+<p>
+Login to DC-1 as jane_admin,
+Open PowerShell_ise as an administrator,
+Create a new File and paste the contents of the script into it
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 2 28 39 PM](https://github.com/user-attachments/assets/f07c3806-7022-48d3-8e5a-cdbf7ba9bedc)
+
+<p>
+Run the script and observe the accounts being created
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 2 45 56 PM](https://github.com/user-attachments/assets/6cce058d-6a28-4d8f-9d2a-3dded7629f52)
+
+<p>
+When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)
+</p>
+<br />
+
+![Screen Shot 2025-03-10 at 2 47 25 PM](https://github.com/user-attachments/assets/235c4b06-6bf6-4278-b3d6-34460c7045fb)
+
+<p>
+Logged into Client-1 with one of the accounts</p>
+<br />
+
+![Screen Shot 2025-03-10 at 2 49 17 PM](https://github.com/user-attachments/assets/e32562ad-8486-4861-94fc-96adf9918c93)
