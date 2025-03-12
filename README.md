@@ -251,4 +251,26 @@ Attempt to login with it
 </p>
 <br />
 
+<h3>
+  Enabling and Disabling Accounts
+</h3>
+<p>
+  Disable the same account in Active Directory
+</p>
+
+![Screen Shot 2025-03-12 at 1 03 35 PM](https://github.com/user-attachments/assets/ad1db6e1-1565-44e2-b3e7-a28a4ea8e633)
+
+<p>
+Attempt to login with it, observe the error message
+</p>
+
+<img width="590" alt="Screen Shot 2025-03-12 at 1 05 36 PM" src="https://github.com/user-attachments/assets/9ad3643e-dac3-4cde-9ba8-691e0b22e269" />
+
+<p>
+Re-enable the account and attempt to login with it.
+</p>
+
+![Screen Shot 2025-03-12 at 1 06 13 PM](https://github.com/user-attachments/assets/f7c28976-3807-48b5-a1ae-413dcfc39637)
+
+![Screen Shot 2025-03-12 at 1 13 29 PM](https://github.com/user-attachments/assets/a0cb2fca-cecb-422a-84e5-03849cb2a640)
 
