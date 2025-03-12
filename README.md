@@ -26,6 +26,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Join Client-1 to your domain (mydomain.com)
 - Setup Remote Desktop for non-administrative users on Client-1
 - Create a bunch of additional users and attempt to log into client-1 with one of the users
+- Dealing with Account Lockouts
+- Enabling and Disabling Accounts
+- Observing Logs
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -217,3 +220,35 @@ Logged into Client-1 with one of the accounts</p>
 <br />
 
 ![Screen Shot 2025-03-10 at 2 49 17 PM](https://github.com/user-attachments/assets/e32562ad-8486-4861-94fc-96adf9918c93)
+
+<p>
+In dc-1, Configure Group Policy to Lockout the account after 5 attempts:
+</p>
+<br />
+
+![Screen Shot 2025-03-11 at 9 42 07 AM](https://github.com/user-attachments/assets/b829a96a-8279-43b5-b653-8742a4ca9174)
+
+<p>
+Attempt to log in with it 6 times with a bad password
+</p>
+<br />
+
+<img width="592" alt="Screen Shot 2025-03-11 at 9 49 22 AM" src="https://github.com/user-attachments/assets/7c8a1d88-89bb-4e8f-8bd2-e4cf5957de7b" />
+
+<p>
+Observe that the account has been locked out within Active Directory,
+Unlock the account,
+Reset the password,
+Attempt to login with it
+</p>
+<br />
+
+![Screen Shot 2025-03-11 at 9 50 40 AM](https://github.com/user-attachments/assets/a6693c0a-82ed-4e4c-a1db-b24c8d66cc4e)
+
+<p>
+Reset the password,
+Attempt to login with it
+</p>
+<br />
+
+
