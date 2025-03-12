@@ -274,3 +274,15 @@ Re-enable the account and attempt to login with it.
 
 ![Screen Shot 2025-03-12 at 1 13 29 PM](https://github.com/user-attachments/assets/a0cb2fca-cecb-422a-84e5-03849cb2a640)
 
+
+<h3>
+  Observing Logs
+</h3>
+
+<p>
+Observe the logs in the Domain Controller
+</p>
+
+![Screen Shot 2025-03-12 at 1 30 51 PM](https://github.com/user-attachments/assets/ba5cc4fb-746c-4fa7-bfc3-16ee50bf4227)
+
+
