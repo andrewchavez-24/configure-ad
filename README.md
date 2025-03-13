@@ -26,76 +26,90 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-Login to DC-1 and install Active Directory Domain Services
+Before deploying Active Directory, we'll need to install 2 VMs on Azure, one will be a Windows Server for the domain controller and one will be Windows Pro machine as a client. We can name the server machine DC-1 and the client machine Client-1. We also need to make sure that both of these machines are on the same virtual network.
 </p>
-<br />
-
-![Screen Shot 2025-03-10 at 12 46 46 PM](https://github.com/user-attachments/assets/d5b44259-134b-4d58-93b3-87ae373273c3)
 
 <p>
-Promote as a DC: Setup a new forest as mydomain.com
+Login to DC-1 and install Active Directory Domain Services
 </p>
-<br />
+<p>
+<img src="https://github.com/user-attachments/assets/d5b44259-134b-4d58-93b3-87ae373273c3" height="80%" width="80%" alt="server manager in DC-1"/>
+</p>
 
-![Screen Shot 2025-03-10 at 12 50 25 PM](https://github.com/user-attachments/assets/0dc5c178-0481-40fe-91e0-965489a5930c)
+<br>
+<p>
+Promote as a DC: Set up a new forest as mydomain.com
+</p>
+<p>
+<img src="https://github.com/user-attachments/assets/0dc5c178-0481-40fe-91e0-965489a5930c" height="80%" width="80%" alt="server manager in DC-1"/>
+</p>
 
+<br>
 <p>
 Restart and then log back into DC-1 as user: mydomain.com\labuser
 </p>
-<br />
 
+<br>
 <p>
-In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES”
+In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES” and create a new OU named “_ADMINS”
 </p>
 <p>
-Create a new OU named “_ADMINS”
+<img src="https://github.com/user-attachments/assets/3a98eed6-7c1a-4bed-b125-0abc3742680d" height="80%" width="80%" alt="server manager in DC-1"/>
 </p>
-<br />
 
-![Screen Shot 2025-03-10 at 1 41 27 PM](https://github.com/user-attachments/assets/3a98eed6-7c1a-4bed-b125-0abc3742680d)
-
+<br>
 <p>
 Create a new employee named “Jane Doe” (same password) with the username of “jane_admin” / Cyberlab123!
 </p>
-<br />
+<p>
+<img src="https://github.com/user-attachments/assets/4c24448a-248f-4c0c-9a9b-6891eff91886" height="80%" width="80%" alt="server manager in DC-1"/>
+</p>
 
-![Screen Shot 2025-03-10 at 1 43 47 PM](https://github.com/user-attachments/assets/4c24448a-248f-4c0c-9a9b-6891eff91886)
-
+<br>
 <p>
 Add jane_admin to the “Domain Admins” Security Group
 </p>
-<br />
+<p>
+<img src="https://github.com/user-attachments/assets/ae0cf498-f19c-49b3-9f3d-5bc251a3fa50" height="80%" width="80%" alt="server manager in DC-1"/>
+</p>
 
-![Screen Shot 2025-03-10 at 1 55 01 PM](https://github.com/user-attachments/assets/ae0cf498-f19c-49b3-9f3d-5bc251a3fa50)
-
+<br>
 <p>
 Log out / close the connection to DC-1 and log back in as “mydomain.com\jane_admin”
 </p>
-<br />
 
+<br />
 <p>
 Use jane_admin as your admin account from now on
 </p>
-<br />
 
+<br />
 <p>
 Login to Client-1 as the original local admin (labuser) and join it to the domain (computer will restart)
 </p>
-<br />
+<p>
+<img src="https://github.com/user-attachments/assets/e321d0d7-80cd-4737-afce-e1579cf667d9" height="80%" width="80%" alt="server manager in DC-1"/>
+</p>
 
-![Screen Shot 2025-03-10 at 2 00 19 PM](https://github.com/user-attachments/assets/e321d0d7-80cd-4737-afce-e1579cf667d9)
-
+<br>
 <p>
 Login to the Domain Controller and verify Client-1 shows up in ADUC
 </p>
-<br />
+<p>
+<img src="https://github.com/user-attachments/assets/f0f13af8-e865-4810-aa2b-897944a0bc17" height="80%" width="80%" alt="server manager in DC-1"/>
+</p>
 
-![Screen Shot 2025-03-10 at 2 03 22 PM](https://github.com/user-attachments/assets/f0f13af8-e865-4810-aa2b-897944a0bc17)
-
+<br>
 <p>
 Create a new OU named “_CLIENTS” and drag Client-1 into there
 </p>
+<p>
+<img src="https://github.com/user-attachments/assets/bfbbb8fc-eb15-49a3-a3a1-37732f7518fd" height="80%" width="80%" alt="server manager in DC-1"/>
+</p>
+
+<h2>Active Directory is Deployed and Ready for Use! </h2>
+
+<b>We've successfully installed AD on the domain controller, created a domain admin, and joined the client VM to the domain. Next, we'll create users in Powershell by running a script, and then manage the accounts and group policy!  </b>
 <br />
-
-![Screen Shot 2025-03-10 at 2 05 18 PM](https://github.com/user-attachments/assets/bfbbb8fc-eb15-49a3-a3a1-37732f7518fd)
-
+<br />
+</p>
