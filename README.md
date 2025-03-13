@@ -14,8 +14,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Operating Systems Used </h2>
 
-- Windows Server 2022
-- Windows 10 (21H2)
+- Windows Server 2022, 2vCPUs, 8GM RAM
+- Windows 10 Pro (22H2), 2vCPUs, 8GB RAM
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
